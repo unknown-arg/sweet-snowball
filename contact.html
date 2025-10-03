@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - Sweet Snowballs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="images/SweetSnowballWhite-cropped.svg" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background-color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      color: #444;
+      line-height: 1.5;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      padding: 0 24px;
+      background: #ffffff;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .logo img {
+      height: 45px;
+      object-fit: contain;
+      display: block;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-weight: 300;
+      font-size: 16px;
+      align-items: center;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      color: #000;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      color: #000000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      padding: 20px 6px;
+      user-select: none;
+      white-space: nowrap;
+      display: inline-block;
+    }
+    .nav-links a:hover { color: #666666; }
+    .nav-links span {
+      color: #aaa;
+      font-size: 18px;
+      user-select: none;
+      pointer-events: none;
+      padding: 20px 0;
+      line-height: 1;
+      display: inline-block;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 20px 6px;
+      user-select: none;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      border-radius: 2px;
+    }
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1100;
+      }
+      .nav-links.active { display: flex; }
+      .hamburger { display: flex; }
+      .nav-links span { display: none; }
+    }
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 24px 40px;
+      text-align: center;
+    }
+    #welcome { margin-top: 80px; }
+    #welcome h1 {
+      font-weight: 300;
+      font-size: 36px;
+      color: #000;
+      margin-bottom: 20px;
+    }
+    #welcome p {
+      font-size: 18px;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto 20px; /* space below each paragraph */
+    }
+    .contact-info {
+      margin-top: 30px;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    .contact-info a {
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .contact-info a:hover { color: #666; }
+    .footer {
+      background: #111;
+      color: #fff;
+      width: 100%;
+      padding: 48px 24px;
+      margin-top: 40px;
+    }
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .footer-logo img {
+      height: 120px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .footer-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 18px;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .footer-details a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-details a:hover { color: #e0e0e0; }
+    @media (max-width: 700px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        text-align: center;
+      }
+      .footer-details { align-items: center; }
+      .footer-logo img { height: 80px; }
+    }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(10px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    .animate-fadeup {
+      opacity: 0;
+      animation-name: fadeUp;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/SSLOONG BLACK.svg" alt="Sweet Snowballs Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="index.html">About Us</a>
+      <span>|</span>
+      <a href="stores.html">Our Stores</a>
+      <span>|</span>
+      <a href="products.html">Our Products</a>
+      <span>|</span>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section id="welcome" class="section">
+    <h1 class="animate-fadeup">Get in Touch With Us</h1>
+    <p class="animate-fadeup" style="animation-delay: 0.3s;">
+      We value our customers and are always here to help. If you face any issues, have questions, 
+      or just want to share your feedback, feel free to reach out to us. 
+      Our team will get back to you as soon as possible.
+    </p>
+    
+    <p class="animate-fadeup" style="animation-delay: 0.5s;">
+      At Sweet Snowballs, we believe that great food brings people together, and so does great communication. Whether you want to share your love for our ice creams, suggest a new flavor, or inquire about catering for your special events, we are always eager to listen. Your connection with us means as much as every scoop we serve, so please don’t hesitate to get in touch—your voice helps shape our sweet journey.
+    </p>
+
+    <div class="contact-info animate-fadeup" style="animation-delay: 0.6s;">
+      <a href="mailto:seemafoods9@gmail.com">Email: seemafoods9@gmail.com</a>
+      <a href="tel:+919540591388">Phone: +91 9540591388</a>
+      <a href="https://instagram.com/sweetsnowball.in" target="_blank">Instagram: @sweetsnowball.in</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/SweetSnowballWhite-cropped.svg" alt="Sweet Snowballs Logo" />
+      </div>
+      <div class="footer-details">
+        <a href="mailto:seemafoods9@gmail.com">seemafoods9@gmail.com</a>
+        <a href="https://instagram.com/sweetsnowball.in" target="_blank">Instagram</a>
+        <a href="tel:+919540591388">+91 9540591388</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if(hamburger && navLinks){
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
